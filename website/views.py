@@ -14,7 +14,7 @@ def index():
         
         if new_city:
             # add to database   
-            new_city_obj = City(name=new_city)    
+            new_city_obj = City(name=new_city)
             db.session.add(new_city_obj)
             db.session.commit()
 
@@ -23,9 +23,7 @@ def index():
     # q={} query is city name 
     # units=imperial so we can see farenheit
     # appid given by open weather map
-    # https://openweathermap.org/current#name 
     url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=7397308c3b593fbf9e831fb14044c1a1'
-
     weather_data = [] # list to hold all weather data per city
 
     for city in cities:
@@ -35,7 +33,7 @@ def index():
         # send request to api where r = response
         r = requests.get(url.format(city.name)).json()
     
-        # create dictionary with city details
+        # create dictionary 'weather' with city details
         weather = {
             'city' : city.name, 
             'temperature' : r['main']['temp'],

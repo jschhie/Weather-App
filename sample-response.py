@@ -1,18 +1,28 @@
-# weather = list of dictionaries / pairings, only contains one big dictionary
+# weather = only contains one big dictionary of dictionaries and a LIST called 'weather'
 
 {
     'coord': {'lon': -115.1372, 'lat': 36.175}, 
     
     'weather': [
-                {'id': 800, 
-                'main': 'Clear', 
-                'description': 'clear sky', 
-                'icon': '01n'}
+                {
+                    'id': 800, 
+                    'main': 'Clear', 
+                    'description': 'clear sky', 
+                    'icon': '01n'
+                }
                 ], 
     
     'base': 'stations', 
     
-    'main': {'temp': 39.76, 'feels_like': 35.64, 'temp_min': 36.1, 'temp_max': 43.48, 'pressure': 1019, 'humidity': 41}, 
+    'main': 
+        {
+            'temp': 39.76, 
+            'feels_like': 35.64, 
+            'temp_min': 36.1, 
+            'temp_max': 43.48, 
+            'pressure': 1019, 
+            'humidity': 41
+        }, 
     
     'visibility': 10000, 
     
