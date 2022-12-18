@@ -6,6 +6,12 @@
 
 # requirements.txt will have the pipfile packages needed
 
+# git init
+# git remote add origin https://github.com/jschhie/weather-app.git
+# git add .
+# git commit -m 'init base code'
+# git push origin master [pushes to git repo online]
+
 import requests
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
