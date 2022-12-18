@@ -19,10 +19,10 @@ def create_app():
     # create or retrieve existing DB
     from .models import City
 
-
     #create_database(app)
     with app.app_context():
         db.create_all()
+
     return app
 
 

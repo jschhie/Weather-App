@@ -1,12 +1,23 @@
+import requests
 from flask import Blueprint, render_template, request
 from . import db
 from .models import City
 
 views = Blueprint('views', __name__)
 
-@views.route('/')
+@views.route('/', methods=['GET', 'POST'])
 def index():
     
+    if request.method == 'POST':
+        # get city name
+        new_city = request.form.get('city')
+        
+        if new_city:
+            # add to database   
+            new_city_obj = City(name=new_city)    
+            db.session.add(new_city_obj)
+            db.session.commit()
+
     cities = City.query.all() # query all cities in table
 
     # q={} query is city name 
@@ -18,12 +29,15 @@ def index():
     weather_data = [] # list to hold all weather data per city
 
     for city in cities:
-        # send request to api where r = response
-        r = requests.get(url.format(city)).json()
 
+        print(city.name)
+
+        # send request to api where r = response
+        r = requests.get(url.format(city.name)).json()
+    
         # create dictionary with city details
         weather = {
-            'city' : city, 
+            'city' : city.name, 
             'temperature' : r['main']['temp'],
             'description' : r['weather'][0]['description'],
             'icon' : r['weather'][0]['icon'],
