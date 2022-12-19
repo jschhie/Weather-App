@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Weather Report{% endblock %}
+
 {% block content %}
 
     <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
@@ -17,19 +19,19 @@
 
     <div class="container">
         {% for weather in weather_data %}
-        <div class="card bg-light mb-3" style="width: 15rem;">
+        <div class="card bg-light mb-3">
             <div class="card-body">
                 <h4 class="card-title"> {{ weather.city }} </h4>
                 <figure class="image is-50x50">
-                    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" ALIGN="left" alt="Image">
+                    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" ALIGN="center" alt="Weather Icon">
                 </figure> 
-                <p>
+                <caption>
                     <h5> {{ weather.temperature }} ° F  </h5>
                     <br>
                     <h6> H: {{ weather.temp_min }} ° | L: {{ weather.temp_max }} ° </h6>
                     <br>
                     {{ weather.description }} 
-                </p>
+                </caption>
             </div>
         </div>
         {% endfor %}    
