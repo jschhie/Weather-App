@@ -5,51 +5,41 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <title>Weather Reporter</title>
+    <title>Weather Report</title>
 </head>
 
 <body>
-    <div class="page-header">
+    <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
         <h2>What's the weather today?</h2>
+        <hr class="my-4" />
+        <form method="POST">
+            <div class="form-group input-group">
+                <input type="search" class="button form-control rounded" name="query" placeholder="Search City">
+                <button type="submit" class="btn btn-primary" name="action" value="search">Add City</button>
+            </div>
+        </form>
     </div>
 
     <br>
 
-    <form method="POST">
-        <div class="form-group">
-            <input class="input" name="city" type="text" placeholder="City Name">
-            <button class="btn btn-primary-outline">
-                Add City
-            </button>
-        </div>
-    </form>
-
-    <div class="content">
+    <div class="container my-auto">
         {% for weather in weather_data %}
-        <div class="card bg-light mb-3" style="width: 18rem;">
-            <div class="card-header">
-                {{ weather.city }}
-            </div>
+        <div class="card bg-light mb-3" style="width: 15rem;">
             <div class="card-body">
-
-                <div class="icon">
-                    <figure class="image is-50x50">
-                        <!-- icon code: 10d -->
-                        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
-                    </figure>                
-                </div>
-
-                <div class="details">
-                    <p>
-                        <span class="subtitle">{{ weather.temperature }} ° F</span>
+                <h4 class="card-title"> {{ weather.city }} </h4>
+                <figure class="image is-50x50">
+                    <!-- icon code: 10d -->
+                    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" class="float-left" alt="Image">
+                    <caption>
+                        <h5> {{ weather.temperature }} ° F  </h5>
                         <br>
-                        {{ weather.description }}
-                    </p>
-                </div>
+                        <h6> H: {{ weather.temp_min }} ° | L: {{ weather.temp_max }} ° </h6>
+                        <br>
+                        {{ weather.description }} 
+                    </caption>
+                </figure> 
             </div>
         </div>
         {% endfor %}    
