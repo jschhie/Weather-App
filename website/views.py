@@ -59,3 +59,13 @@ def home_post():
     else:
         flash('Successfully added new city!', 'success')
     return redirect(url_for('views.home_get'))
+
+
+
+@views.route('/delete/<name>')
+def delete_city(name):
+    city = City.query.filter_by(name=name).first()
+    db.session.delete(city)
+    db.session.commit()
+    flash('Successfully deleted {}'.format(city.name), 'success')
+    return redirect(url_for('views.home_get'))
