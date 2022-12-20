@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Weather Report{% endblock %}
+
+{% block content %}
+
+    <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
+        <h2>What's the weather today?</h2>
+        <hr class="my-4" />
+        <form method="POST">
+            <div class="form-group input-group">
+                <input type="search" class="button form-control rounded" name="query" placeholder="Search City">
+                <button type="submit" class="btn btn-primary-outline" name="action" value="search">Add City</button>
+            </div>
+        </form>
+    </div>
+
+    <br>
+
+    <div class="container">
+        {% for weather in weather_data %}
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+    
+                <div class="media">
+                    <a href="{{ url_for('views.delete_city', name=weather.city) }}">
+                        <button class="btn btn-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="media">
+                    <img class="align-self-center mr-3" src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather Icon">
+                    <div class="media-body">
+                        <h4 class="card-title"> {{ weather.city }} </h4>
+                        <h5> {{ weather.temperature }} ° F  </h5>
+                        <br>
+                        <h6> H: {{ weather.temp_min }} ° | L: {{ weather.temp_max }} ° </h6>
+                        <br>
+                        {{ weather.description }} 
+                    </div>
+                </div> 
+            </div>
+        </div>
+        {% endfor %}    
+    </div>
+
+{% endblock %}
