@@ -4,13 +4,9 @@ See the weather reports for different cities, using <a href="https://openweather
 
 # Set Up
 (Assuming in Terminal)
-This webapp uses ```pipenv```; to install it, run:
+To launch the virtual environment with the required packages (see Pipfile) and run the webapp, enter the following:
 ```
 pipenv install
-```
-
-To launch the virtual environment and run the webapp, enter the following:
-```
 pipenv shell
 python3 main.py
 ```
