@@ -9,7 +9,7 @@ DB_NAME ="weather.db"
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'fb66099b595b09d56b7082aab997b1ee' # able sessions and flashed messages
+    app.config['SECRET_KEY'] = 'fb66099b595b09d56b7082aab997b1ee' # to enable sessions and flashed messages
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
