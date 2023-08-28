@@ -1,6 +1,6 @@
 # Flask Weather Web App
 
-See the weather reports for different cities, using <a href="https://openweathermap.org/">OpenWeatherMap</a> API and optionally remove queried cities from view later.
+See the weather reports for different cities, using <a href="https://openweathermap.org/">OpenWeatherMap</a> API and optionally remove queried cities from view later. Simple web application to experiment with APIs.
 
 # Set Up
 (Assuming in Terminal)
