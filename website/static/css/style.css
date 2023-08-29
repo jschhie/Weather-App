@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@200;400&display=swap');
+
+* {
+    font-family: 'Asap', sans-serif;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    padding: 2%;
+    margin-top: 3%;
+    width: 100%;
+}
+
+.footer-link {
+    color: white;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+#main-banner {
+    padding: 2%;
+    background-color: hsl(0, 0%, 94%);
+    margin-bottom: 3%;
+}
+
+#banner-text {
+    font-weight: 700;
+}
+
+#search-btn {
+    margin-left: 3%;
+    border: 1px black solid;
+    border-radius: 5%;
+}
+
+#search-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+#search-form {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+.custom-card {
+    width: 47%;
+    margin: 1%;
+}
+
+.del-btn {
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    background-color: transparent;
+}
+
+.del-btn:hover {
+    background-color:  hsl(0, 0%, 94%);
+    border-radius: 5%;
+}
+
+.city {
+    text-align: left;
+    font-size: medium;
+}
+
+#city-temp {
+    font-size:x-large;
+    font-weight: 700;
+}
+
+.card-title {
+    font-size: 1em;
+}
+
+
+.weather-icon {
+
+}
+
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    transform: scale(2.4);
+    position: absolute;
+    right: 30px;
+    margin-top: 6%;
+}
+
+.icon-caption, .low-temp {
+    text-align: right;
+}
+
+.first-row {
+    border-bottom: 1px solid black;
+}
+
+.second-row {
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+/* media queries to make responsive design */
+/* medium and larger screens */
+@media all and (min-width:768px) {
+    .card-title {
+        font-size: 1.3em;
+    }
+
+    .second-row {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .city-temp {
+        font-size: x-large;
+    }
+
+    .custom-card {
+        width: 30%;
+        margin: 1%;
+    }
+}

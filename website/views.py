@@ -21,18 +21,23 @@ def home_get():
     weather_data = [] # list to hold all weather data per city
 
     for city in cities:
-        # send request to api, where r = response
-        r = get_weather_data(city.name)
+        try:
+            # send request to api, where r = response
+            r = get_weather_data(city.name)
             # create dictionary with city details
-        weather = {
-            'city' : city.name, 
-            'temperature' : r['main']['temp'],
-            'description' : r['weather'][0]['description'],
-            'icon' : r['weather'][0]['icon'],
-            'temp_min': r['main']['temp_min'],
-            'temp_max': r['main']['temp_max'],
-        }            
-        weather_data.append(weather)
+            weather = {
+                'city' : city.name, 
+                'temperature' : r['main']['temp'],
+                'description' : r['weather'][0]['description'],
+                'icon' : r['weather'][0]['icon'],
+                'temp_min': r['main']['temp_min'],
+                'temp_max': r['main']['temp_max'],
+                'country': r['sys']['country']
+            }
+            weather_data.append(weather)
+        except:
+            pass
+            
     return render_template('home.html', weather_data=weather_data)
 
 
@@ -44,7 +49,7 @@ def home_post():
         new_city = request.form['query']
         existing_city = City.query.filter_by(name=new_city).first()
         if not existing_city:
-            new_city_data = get_weather_data(new_city)
+            new_city_data = get_weather_data(new_city)            
             if new_city_data['cod'] == 200:
                 new_city_obj = City(name=new_city)
                 db.session.add(new_city_obj)
@@ -56,8 +61,7 @@ def home_post():
     
     if err_msg:
         flash(err_msg, 'error')
-    else:
-        flash('Successfully added new city!', 'success')
+
     return redirect(url_for('views.home_get'))
 
 
