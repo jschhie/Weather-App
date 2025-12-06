@@ -19,20 +19,25 @@ git clone https://github.com/jschhie/weather-app.git [folderNameHere]
 ```bash
 cd [folderNameHere]
 ```
-  
-3. Install the required packages as listed in the `Pipfile`:
+
+3. Create virtual environment to isolate project dependencies:
 ```bash
-pipenv install
+python3 -m venv venv
 ```
 
-4. Activate the virtual environment:
+4. Activate venv
 ```bash
-pipenv shell
+source venv/bin/activate venv
 ```
 
-5. Run the Flask app:
+5. Install the required packages as listed in `requirements.txt`:
+```bash
+pip3 install -r requirements.txt
+```
+
+6. Run the Flask app:
 ```bash
 python3 main.py
 ```
 
-This process will create a `weather.db` file inside the `instance` directory. You can interact the web app at: http://127.0.0.1:5000 in any web browser.
+This process will create a `weather.db` database in the `instance` directory. You can interact the web app at: http://127.0.0.1:5000 in any web browser.
