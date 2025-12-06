@@ -5,7 +5,7 @@
 * Designed with a responsive layout, styled using Bootstrap and CSS, providing an intuitive user experience.
 
 # Visual Demo
-<img src="https://github.com/jschhie/weather-app/blob/master/new-demo.png" alter="Demo of weather web app">
+<img src="https://github.com/jschhie/weather-app/blob/master/demos/new-demo.png" alter="Demo of weather web app">
 
 # Running the App Manually
 To launch the virtual environment and run the web application, follow these steps:
