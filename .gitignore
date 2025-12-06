@@ -1,0 +1,10 @@
+*.db
+weather.db
+sample-response.py
+*.png
+new-demo.png
+venv
+*.pyc
+__pycache__
+.DS_STORE
+instance/
