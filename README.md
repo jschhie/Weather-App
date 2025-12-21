@@ -1,11 +1,28 @@
 # Flask Weather Web App
+> - **Live Demo:** https://skycast.pythonanywhere.com/
+
+---
+
+## Tech Stack 
+| Component | Tech Used |
+| :--- | :--- |
+| **Backend** | Python, Flask |
+| **Frontend Logic** | JavaScript, Jinja Templating |
+| **UI/Styling** | Bootstrap |
+| **Deployment** | PythonAnywhere |
+
+---
 
 * A simple web application that displays weather reports for various cities using the <a href="https://openweathermap.org/">OpenWeatherMap</a> API.
 * Users can optionally remove queried cities from their view.
 * Designed with a responsive layout, styled using Bootstrap and CSS, providing an intuitive user experience.
 
+---
+
 # Visual Demo
 <img src="https://github.com/jschhie/weather-app/blob/main/demos/new-demo.png" alter="Demo of weather web app">
+
+---
 
 # Running the App Manually
 To launch the virtual environment and run the web application, follow these steps:
