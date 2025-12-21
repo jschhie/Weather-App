@@ -1,4 +1,4 @@
-# Flask Weather Web App
+# Skycast | Flask Weather Report
 > - **Live Demo:** https://skycast.pythonanywhere.com/
 
 ---
@@ -23,7 +23,7 @@
 
 | Desktop | Mobile |
 | :---: | :---: |
-| <img src="https://github.com/jschhie/weather-app/blob/main/demos/weather-demo.png" width="600"> | <img src="https://github.com/jschhie/weather-app/blob/main/demos/mobile-demo.PNG" width="300"> |
+| <img src="https://github.com/jschhie/weather-app/blob/main/demos/desktop-demo.png" width="600"> | <img src="https://github.com/jschhie/weather-app/blob/main/demos/mobile-demo.PNG" width="300"> |
 
 ---
 
