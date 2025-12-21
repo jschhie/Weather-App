@@ -23,7 +23,7 @@
 
 | Desktop | Mobile |
 | :---: | :---: |
-| <img src="https://github.com/jschhie/weather-app/blob/main/demos/desktop-demo.png" width="600"> | <img src="https://github.com/jschhie/weather-app/blob/main/demos/mobile-demo.PNG" width="300"> |
+| <img src="https://github.com/jschhie/weather-app/blob/main/demos/desktop-demo.png" width="600"> | <img src="https://github.com/jschhie/weather-app/blob/main/demos/new-mobile-demo.PNG" width="300"> |
 
 ---
 
