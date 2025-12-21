@@ -20,7 +20,7 @@
 ---
 
 # Visual Demo
-<img src="https://github.com/jschhie/weather-app/blob/main/demos/new-demo.png" alter="Demo of weather web app">
+<img src="https://github.com/jschhie/weather-app/blob/main/demos/weather-demo.png" alter="Demo of weather web app">
 
 ---
 
