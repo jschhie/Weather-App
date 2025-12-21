@@ -1,6 +1,5 @@
 *.db
 weather.db
-demos/
 venv
 .env
 *.pyc
