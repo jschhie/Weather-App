@@ -2,8 +2,9 @@
 weather.db
 demos/
 venv
+.env
 *.pyc
 __pycache__
 website/__pycache__
 .DS_STORE
-instance/
+instance/weather.db
