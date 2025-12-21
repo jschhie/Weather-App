@@ -46,7 +46,7 @@ def home_get():
 def home_post():
     err_msg = ''
     if request.form['action'] == 'search':
-        new_city = request.form['query']
+        new_city = request.form['query'].title()
         existing_city = City.query.filter_by(name=new_city).first()
         if not existing_city:
             new_city_data = get_weather_data(new_city)            
@@ -54,10 +54,11 @@ def home_post():
                 new_city_obj = City(name=new_city)
                 db.session.add(new_city_obj)
                 db.session.commit()
+                flash('Added {}'.format(new_city_obj.name), 'success')
             else:
-                err_msg = 'City does not exist in the world!'
+                err_msg = 'Whoops! Location does not exist in the world!'
         else:
-            err_msg = 'City already exists in the database!'
+            err_msg = 'Whoops! Location already saved!'
     
     if err_msg:
         flash(err_msg, 'error')
@@ -71,5 +72,5 @@ def delete_city(name):
     city = City.query.filter_by(name=name).first()
     db.session.delete(city)
     db.session.commit()
-    flash('Successfully deleted {}'.format(city.name), 'success')
+    flash('Removed {} from saved locations'.format(city.name), 'success')
     return redirect(url_for('views.home_get'))

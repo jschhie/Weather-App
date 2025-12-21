@@ -65,6 +65,14 @@ footer {
     margin: 1%;
 }
 
+.hover-shadow-effect {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hover-shadow-effect:hover {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
 .del-btn {
     position: absolute;
     right: 0px;
