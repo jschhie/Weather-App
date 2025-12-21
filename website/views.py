@@ -4,14 +4,29 @@ from flask import Blueprint, render_template, request, \
 from . import db
 from .models import City
 
+from os import path, environ
+from dotenv import load_dotenv
+
 views = Blueprint('views', __name__)
 
 # Function (not route) 
-# Makes a request to api and get its response in json format
+# Makes API request
 def get_weather_data(city):
-    url = f'https://api.openweathermap.org/data/2.5/weather?q={ city }&units=imperial&appid=7397308c3b593fbf9e831fb14044c1a1'
-    r = requests.get(url).json()
-    return r # return response as json
+    # Get absolute path of current file (for server and local dev)
+    current_dir = path.abspath(path.dirname(__file__))
+
+    project_root = path.dirname(current_dir)
+    env_path = path.join(project_root, '.env')
+
+    load_dotenv(env_path)
+    api_key = environ.get('WEATHER_API_KEY', 'api-key-error')
+    print(api_key)
+
+    if (api_key != 'api-key-error'):
+        url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&appid={api_key}'
+        r = requests.get(url).json()
+        return r # Return JSON response
+    return {} # Return empty dict
 
 
 
