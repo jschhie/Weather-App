@@ -13,7 +13,7 @@ MarkupSafe==2.1.5
 requests==2.32.4
 sqlalchemy==2.0.44
 typing-extensions==4.13.2
-urllib3==2.2.3
+urllib3==2.6.0
 werkzeug==3.0.6
 zipp==3.20.2
 python-dotenv==1.0.1
