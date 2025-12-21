@@ -21,11 +21,9 @@
 
 # Visual Demos
 
-> Desktop view
-<img src="https://github.com/jschhie/weather-app/blob/main/demos/new-demo.png" alt="Demo of weather web app">
-
-> Mobile view
-<img src="https://github.com/jschhie/weather-app/blob/main/demos/mobile-demo.PNG" alt="Demo of weather web app">
+| Desktop | Mobile |
+| :---: | :---: |
+| <img src="https://github.com/jschhie/weather-app/blob/main/demos/weather-demo.png" width="600"> | <img src="https://github.com/jschhie/weather-app/blob/main/demos/mobile-demo.PNG" width="300"> |
 
 ---
 
