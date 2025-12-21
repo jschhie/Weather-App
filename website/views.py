@@ -46,7 +46,7 @@ def home_get():
 def home_post():
     err_msg = ''
     if request.form['action'] == 'search':
-        new_city = request.form['query']
+        new_city = request.form['query'].title()
         existing_city = City.query.filter_by(name=new_city).first()
         if not existing_city:
             new_city_data = get_weather_data(new_city)            
